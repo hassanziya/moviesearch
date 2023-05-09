@@ -13,7 +13,7 @@ function App() {
     setMovieList([]);
     if (searchText.trim() !== '') {
       setLoading(true);
-      const baseURL = `http://www.omdbapi.com/?apikey=d3bdd447&s=${searchText}`;
+      const baseURL = `https://www.omdbapi.com/?apikey=d3bdd447&s=${searchText}`;
       axios
         .get(baseURL)
         .then((response) => {

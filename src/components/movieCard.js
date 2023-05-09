@@ -6,7 +6,7 @@ const MovieCard = ({ movieList }) => {
   const [movieDetails, setMovieDetails] = useState({});
   const handleMovieDetails = (id) => {
     setLoading(true);
-    const baseURL = `http://www.omdbapi.com/?apikey=d3bdd447&i=${id}`;
+    const baseURL = `https://www.omdbapi.com/?apikey=d3bdd447&i=${id}`;
     axios
       .get(baseURL)
       .then((response) => {
@@ -28,7 +28,7 @@ const MovieCard = ({ movieList }) => {
         {movieList.map((movie) => {
           return (
             <div
-              className="col col-lg-3 col-md-4 col-sm-6 col-xs-12 my-2 movieCard"
+              className="col col-lg-3 col-md-4 col-sm-12 my-2 movieCard"
               key={movie.imdbID}
               onClick={() => handleMovieDetails(movie.imdbID)}
               data-bs-toggle="modal"
